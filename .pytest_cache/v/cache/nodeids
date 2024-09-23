@@ -1,4 +1,6 @@
 [
+  "tests/test_circle.py::TestCircle::test_one",
+  "tests/test_circle.py::TestCircle::test_two",
   "tests/test_function.py::test_add",
   "tests/test_function.py::test_concanate_strings",
   "tests/test_function.py::test_divide"
