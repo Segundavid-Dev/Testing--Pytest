@@ -1,4 +1,5 @@
 import pytest
+import time
 from source.function import divide_number
 import source.function as my_function
 
@@ -22,3 +23,16 @@ def test_divide():
 def test_concanate_strings():
     result = my_function.add(number_one="I like ", number_two="Burger")
     assert result == "I like Burger"
+
+def test_very_slow():
+    time.sleep(5)
+    result = my_function.add(number_one=3, number_two=7)
+    assert result == 10
+
+@pytest.mark.skip(reason="This feature is currently broken")
+def test_add():
+    assert my_function.add(number_one=1, number_two=2) == 3
+
+@pytest.mark.fail(reason="We know we cannot divide by Zero")
+def test_divide_zero_broken():
+    my_function.divide_number(4, 0)
